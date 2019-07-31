@@ -11,7 +11,7 @@ import UIKit
 
 class MainRouter: MainRouterProtocol {
     
-    var viewController: MainViewController?
+    weak var viewController: MainViewController!
     
     init(viewController: MainViewController) {
         self.viewController = viewController

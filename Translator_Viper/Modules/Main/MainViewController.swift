@@ -24,6 +24,7 @@ class MainViewController: UIViewController, MainViewProtocol {
         configurator.configure(with: self)
         presenter?.configureView()
         inputTextView.delegate = self
+        inputTextView.textColor = UIColor.lightGray
     }
     
     func showTranslate(text: String) {
@@ -45,21 +46,30 @@ class MainViewController: UIViewController, MainViewProtocol {
         presenter?.changeLanguage()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        inputTextView.resignFirstResponder()
+    }
+    
 }
 
 // MARK: - TextView Delegate Methods
 
 extension MainViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        //presenter?.makeTranslate()
+        if inputTextView.textColor == UIColor.lightGray {
+            inputTextView.text = nil
+            inputTextView.textColor = UIColor.black
+        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        presenter?.makeTranslate(inputText: inputTextView.text, startLanguage: "en", finalLanguage: "ru")
-    }
-    
-    func textViewDidChange(_ textView: UITextView) {
-        //presenter?.makeTranslate(inputText: inputTextView.text, startLanguage: "en", finalLanguage: "ru")
+        
+        if inputTextView.text.isEmpty {
+            inputTextView.text = "Text or website address"
+            inputTextView.textColor = UIColor.lightGray
+        } else {
+            presenter?.makeTranslate(inputText: inputTextView.text, startLanguage: "en", finalLanguage: "ru")
+        }
     }
 }
 

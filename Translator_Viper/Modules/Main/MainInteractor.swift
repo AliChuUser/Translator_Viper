@@ -12,7 +12,7 @@ class MainInteractor: MainInteractorProtocol {
     
     var presenter: MainPresenterProtocol?
     
-    var apiRequest: APIRequestProtocol = APIRequest()
+    var apiRequest: NetworkServiceProtocol = NetworkService()
     
     required init(presenter: MainPresenterProtocol) {
         self.presenter = presenter

@@ -1,5 +1,5 @@
 //
-//  APIRequest.swift
+//  NetworkService.swift
 //  Translator_Viper
 //
 //  Created by User on 31/07/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol APIRequestProtocol {
+protocol NetworkServiceProtocol {
     func fetchTranslate(inputText: String,
                         startLanguage: String,
                         finalLanguage: String,
@@ -16,7 +16,7 @@ protocol APIRequestProtocol {
                         faliureCallback: @escaping (Error) -> Void)
 }
 
-class APIRequest: APIRequestProtocol {
+class NetworkService: NetworkServiceProtocol {
     
     private let keyAPI = "trnsl.1.1.20190731T131937Z.ff78d92816b22fb7.7e867a29e0eb46309457dbdbe59fcaa377fd6e92"
     

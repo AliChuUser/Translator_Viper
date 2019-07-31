@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124C011222F237130005B212 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C011122F237130005B212 /* StorageService.swift */; };
+		124C011522F239B00005B212 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C011422F239B00005B212 /* SourceViewController.swift */; };
+		124C011722F239E40005B212 /* SourceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C011622F239E40005B212 /* SourceProtocols.swift */; };
+		124C011922F23ABB0005B212 /* SourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C011822F23ABB0005B212 /* SourcePresenter.swift */; };
+		124C011B22F23ADE0005B212 /* SourceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C011A22F23ADE0005B212 /* SourceInteractor.swift */; };
+		124C011D22F23AFC0005B212 /* SourceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C011C22F23AFC0005B212 /* SourceRouter.swift */; };
+		124C011F22F23B190005B212 /* SourceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C011E22F23B190005B212 /* SourceConfigurator.swift */; };
+		124C012222F24FCE0005B212 /* HistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C012122F24FCE0005B212 /* HistoryViewCell.swift */; };
 		CE5CAFDE22F1954D000D04EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CAFDD22F1954D000D04EC /* AppDelegate.swift */; };
 		CE5CAFE022F1954D000D04EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CAFDF22F1954D000D04EC /* MainViewController.swift */; };
 		CE5CAFE322F1954D000D04EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5CAFE122F1954D000D04EC /* Main.storyboard */; };
@@ -24,10 +32,18 @@
 		CE5CB00822F19C2D000D04EC /* HistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB00722F19C2D000D04EC /* HistoryInteractor.swift */; };
 		CE5CB00A22F19C7C000D04EC /* HistoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB00922F19C7C000D04EC /* HistoryConfigurator.swift */; };
 		CE5CB00E22F1B4F7000D04EC /* HistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB00D22F1B4F7000D04EC /* HistoryRouter.swift */; };
-		CE5CB01022F1D14E000D04EC /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB00F22F1D14E000D04EC /* APIRequest.swift */; };
+		CE5CB01022F1D14E000D04EC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CB00F22F1D14E000D04EC /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		124C011122F237130005B212 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		124C011422F239B00005B212 /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
+		124C011622F239E40005B212 /* SourceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceProtocols.swift; sourceTree = "<group>"; };
+		124C011822F23ABB0005B212 /* SourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcePresenter.swift; sourceTree = "<group>"; };
+		124C011A22F23ADE0005B212 /* SourceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceInteractor.swift; sourceTree = "<group>"; };
+		124C011C22F23AFC0005B212 /* SourceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceRouter.swift; sourceTree = "<group>"; };
+		124C011E22F23B190005B212 /* SourceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceConfigurator.swift; sourceTree = "<group>"; };
+		124C012122F24FCE0005B212 /* HistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewCell.swift; sourceTree = "<group>"; };
 		CE5CAFDA22F1954D000D04EC /* Translator_Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator_Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5CAFDD22F1954D000D04EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5CAFDF22F1954D000D04EC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +63,7 @@
 		CE5CB00722F19C2D000D04EC /* HistoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInteractor.swift; sourceTree = "<group>"; };
 		CE5CB00922F19C7C000D04EC /* HistoryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryConfigurator.swift; sourceTree = "<group>"; };
 		CE5CB00D22F1B4F7000D04EC /* HistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRouter.swift; sourceTree = "<group>"; };
-		CE5CB00F22F1D14E000D04EC /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		CE5CB00F22F1D14E000D04EC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +77,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		124C011322F239120005B212 /* SourceLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				124C011422F239B00005B212 /* SourceViewController.swift */,
+				124C011822F23ABB0005B212 /* SourcePresenter.swift */,
+				124C011A22F23ADE0005B212 /* SourceInteractor.swift */,
+				124C011C22F23AFC0005B212 /* SourceRouter.swift */,
+				124C011E22F23B190005B212 /* SourceConfigurator.swift */,
+				124C011622F239E40005B212 /* SourceProtocols.swift */,
+			);
+			path = SourceLanguage;
+			sourceTree = "<group>";
+		};
+		124C012022F24F4C0005B212 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				124C012122F24FCE0005B212 /* HistoryViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CE5CAFD122F1954D000D04EC = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +120,7 @@
 				CE5CAFF222F1957C000D04EC /* Modules */,
 				CE5CAFF422F195B1000D04EC /* Entities */,
 				CE5CAFF322F195A5000D04EC /* Services */,
+				124C012022F24F4C0005B212 /* Views */,
 				CE5CAFDD22F1954D000D04EC /* AppDelegate.swift */,
 				CE5CAFE122F1954D000D04EC /* Main.storyboard */,
 				CE5CAFE722F1954F000D04EC /* Assets.xcassets */,
@@ -97,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5CAFF522F19607000D04EC /* Main */,
+				124C011322F239120005B212 /* SourceLanguage */,
 				CE5CAFF622F1969E000D04EC /* History */,
 			);
 			path = Modules;
@@ -105,7 +144,8 @@
 		CE5CAFF322F195A5000D04EC /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CE5CB00F22F1D14E000D04EC /* APIRequest.swift */,
+				CE5CB00F22F1D14E000D04EC /* NetworkService.swift */,
+				124C011122F237130005B212 /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -215,19 +255,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5CAFF822F1973E000D04EC /* MainProtocols.swift in Sources */,
+				124C011922F23ABB0005B212 /* SourcePresenter.swift in Sources */,
+				124C012222F24FCE0005B212 /* HistoryViewCell.swift in Sources */,
 				CE5CB00022F198C6000D04EC /* MainConfigurator.swift in Sources */,
 				CE5CAFFE22F19884000D04EC /* MainRouter.swift in Sources */,
 				CE5CB00422F19BA5000D04EC /* HistoryProtocols.swift in Sources */,
+				124C011722F239E40005B212 /* SourceProtocols.swift in Sources */,
 				CE5CAFFC22F19807000D04EC /* MainPresenter.swift in Sources */,
+				124C011222F237130005B212 /* StorageService.swift in Sources */,
 				CE5CAFE622F1954D000D04EC /* Translator_Viper.xcdatamodeld in Sources */,
 				CE5CB00822F19C2D000D04EC /* HistoryInteractor.swift in Sources */,
 				CE5CB00222F19AEC000D04EC /* HistoryViewController.swift in Sources */,
 				CE5CAFE022F1954D000D04EC /* MainViewController.swift in Sources */,
 				CE5CB00A22F19C7C000D04EC /* HistoryConfigurator.swift in Sources */,
+				124C011D22F23AFC0005B212 /* SourceRouter.swift in Sources */,
+				124C011B22F23ADE0005B212 /* SourceInteractor.swift in Sources */,
+				124C011F22F23B190005B212 /* SourceConfigurator.swift in Sources */,
+				124C011522F239B00005B212 /* SourceViewController.swift in Sources */,
 				CE5CB00622F19BDF000D04EC /* HistoryPresenter.swift in Sources */,
 				CE5CAFFA22F197A7000D04EC /* MainInteractor.swift in Sources */,
 				CE5CAFDE22F1954D000D04EC /* AppDelegate.swift in Sources */,
-				CE5CB01022F1D14E000D04EC /* APIRequest.swift in Sources */,
+				CE5CB01022F1D14E000D04EC /* NetworkService.swift in Sources */,
 				CE5CB00E22F1B4F7000D04EC /* HistoryRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CWQG5M66G2;
+				DEVELOPMENT_TEAM = 3W367PG52S;
 				INFOPLIST_FILE = Translator_Viper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -393,7 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CWQG5M66G2;
+				DEVELOPMENT_TEAM = 3W367PG52S;
 				INFOPLIST_FILE = Translator_Viper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

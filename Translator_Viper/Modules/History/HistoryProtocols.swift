@@ -8,23 +8,23 @@
 
 import Foundation
 
-protocol HistoryViewProtocol {
+protocol HistoryViewProtocol: class {
     
 }
 
-protocol HistoryPresenterProtocol {
+protocol HistoryPresenterProtocol: class {
     
 }
 
-protocol HistoryInteractorProtocol {
+protocol HistoryInteractorProtocol: class {
     
 }
 
-protocol HistoryRouterProtocol {
+protocol HistoryRouterProtocol: class {
     
 }
 
-protocol ListConfiguratorProtocol {
+protocol ListConfiguratorProtocol: class {
     
 }
 
