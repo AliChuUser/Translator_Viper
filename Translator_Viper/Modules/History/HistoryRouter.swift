@@ -10,4 +10,10 @@ import Foundation
 
 class HistoryRouter: HistoryRouterProtocol {
     
+    weak var viewController: HistoryViewController!
+    
+    init(viewController: HistoryViewController) {
+        self.viewController = viewController
+    }
+    
 }

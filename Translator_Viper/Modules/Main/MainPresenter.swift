@@ -32,7 +32,7 @@ class MainPresenter: MainPresenterProtocol {
     
     func makeTranslate(inputText: String, startLanguage: String, finalLanguage: String) {
         print(#function)
-        interactor?.receiveTranslate(inputText: inputText, startLanguage: startLanguage, finalLanguage: finalLanguage)
+        interactor?.fetchTranslate(inputText: inputText, startLanguage: startLanguage, finalLanguage: finalLanguage)
     }
     
     func translateReceived(text: String) {

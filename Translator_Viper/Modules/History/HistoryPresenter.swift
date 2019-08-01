@@ -10,4 +10,23 @@ import Foundation
 
 class HistoryPresenter: HistoryPresenterProtocol {
     
+    weak var view: HistoryViewProtocol!
+    var interactor: HistoryInteractorProtocol?
+    var router: HistoryRouterProtocol?
+    
+    required init(view: HistoryViewProtocol) {
+        self.view = view
+    }
+    
+    func configureView() {
+        getHistory()
+    }
+    
+    func getHistory() {
+        interactor?.fetchHistory()
+    }
+    
+    func historyReceived(data: [Translate]) {
+        view.showHistory(with: data)
+    }
 }

@@ -254,7 +254,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="U25-65-ZRM">
-                                    <rect key="frame" x="0.0" y="93" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="93" width="414" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -320,6 +320,9 @@
                     <navigationItem key="navigationItem" title="History" id="3Hv-Ps-gaS">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="VDJ-tu-MPJ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="xrl-Ev-VHM" id="8SH-TK-m81"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ojh-Ee-OEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

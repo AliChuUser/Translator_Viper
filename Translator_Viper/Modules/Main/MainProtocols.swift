@@ -22,7 +22,7 @@ protocol MainPresenterProtocol: class {
 }
 
 protocol MainInteractorProtocol: class {
-    func receiveTranslate(inputText: String, startLanguage: String, finalLanguage: String)
+    func fetchTranslate(inputText: String, startLanguage: String, finalLanguage: String)
 }
 
 protocol MainRouterProtocol: class {

@@ -9,23 +9,25 @@
 import Foundation
 
 protocol HistoryViewProtocol: class {
-    
+    func showHistory(with data: [Translate])
 }
 
 protocol HistoryPresenterProtocol: class {
-    
+    func configureView()
+    func getHistory()
+    func historyReceived(data: [Translate])
 }
 
 protocol HistoryInteractorProtocol: class {
-    
+    func fetchHistory()
 }
 
 protocol HistoryRouterProtocol: class {
     
 }
 
-protocol ListConfiguratorProtocol: class {
-    
+protocol HistoryConfiguratorProtocol: class {
+    func configure(with viewController: HistoryViewController)
 }
 
 

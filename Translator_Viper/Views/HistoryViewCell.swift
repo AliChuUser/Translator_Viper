@@ -9,16 +9,16 @@
 import UIKit
 
 protocol HistoryViewCellProtocol: class {
-    func setData()
+    func setData(with model: Translate)
 }
 
 class HistoryViewCell: UITableViewCell, HistoryViewCellProtocol {
     
     @IBOutlet weak var originalLanguageLabel: UILabel!
-    
     @IBOutlet weak var translatedLanguageLabel: UILabel!
     
-    func setData() {
-        
+    func setData(with model: Translate) {
+        originalLanguageLabel.text = model.originalString
+        translatedLanguageLabel.text = model.translatedString
     }
 }

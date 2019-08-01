@@ -10,4 +10,18 @@ import Foundation
 
 class HistoryInteractor: HistoryInteractorProtocol {
     
+    var presenter: HistoryPresenterProtocol?
+    
+    required init(presenter: HistoryPresenterProtocol) {
+        self.presenter = presenter
+    }
+    
+    func fetchHistory() {
+        StorageService.fetchData(resultCallback: { (data) in
+            self.presenter?.historyReceived(data: data)
+        }) { (error) in
+            print("Cannot fetch data from CareData: \(error.localizedDescription)")
+        }
+    }
+    
 }
