@@ -12,9 +12,15 @@ import UIKit
 class MainRouter: MainRouterProtocol {
     
     weak var viewController: MainViewController!
+    var presenter: MainPresenterProtocol?
     
     init(viewController: MainViewController) {
         self.viewController = viewController
+    }
+    
+    func gotDataFromHistory(data: Translate) {
+        print(#function)
+        presenter?.configureViewWithHistory(data: data)
     }
     
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {

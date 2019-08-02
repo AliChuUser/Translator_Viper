@@ -34,8 +34,8 @@ class HistoryPresenter: HistoryPresenterProtocol {
         interactor?.updateHistoryWithPredicate(text)
     }
     
-    func userTappedCell(with text: String) {
-        router?.showMainScreen(with: text)
+    func userTappedCell(with data: Translate) {
+        router?.showMainScreen(with: data)
     }
     
     func deleteAllData() {

@@ -32,21 +32,25 @@ class MainInteractor: MainInteractorProtocol {
         // fetch data from CoreData if possible
         StorageService.fetchData(resultCallback: { translates in
             if !translates.isEmpty {
+                var flag = false
                 translates.forEach({ translate in
                     if translate.originalString == inputText {
                         guard let translatedString = translate.translatedString else { return }
                         self.presenter?.translateReceived(text: translatedString)
                         print("Got from Storage")
+                        flag = true
                         return
                     } else if translate.translatedString == inputText {
                         guard let originalString = translate.originalString else { return }
                         self.presenter?.translateReceived(text: originalString)
                         print("Got from Storage")
+                        flag = true
                         return
                     }
                 })
-                // Решить проблему двойного сохранения в coreData
-                self.networkRequest(inputText: inputText, startLanguage: startLanguage, finalLanguage: finalLanguage)
+                if !flag {
+                   self.networkRequest(inputText: inputText, startLanguage: startLanguage, finalLanguage: finalLanguage)
+                }
             } else {
                 self.networkRequest(inputText: inputText, startLanguage: startLanguage, finalLanguage: finalLanguage)
             }

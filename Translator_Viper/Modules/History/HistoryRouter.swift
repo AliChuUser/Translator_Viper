@@ -12,13 +12,16 @@ import UIKit
 class HistoryRouter: HistoryRouterProtocol {
     
     weak var viewController: HistoryViewController!
+    var mainRouter: MainRouterProtocol? //
+    //var mainViewController: MainViewController!
     
     init(viewController: HistoryViewController) {
         self.viewController = viewController
     }
     
-    func showMainScreen(with text: String) {
+    func showMainScreen(with data: Translate) {
         print(#function)
+        mainRouter?.gotDataFromHistory(data: data)
+        viewController.tabBarController?.selectedIndex = 0
     }
-    
 }

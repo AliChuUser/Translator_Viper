@@ -77,6 +77,9 @@ class StorageService {
         }
     }
     
+}
+
+extension StorageService {
     static func saveUserDefaults(firstButton: String, secondButton: String) {
         let firstKey = "first"
         let secondKey = "second"
@@ -88,7 +91,7 @@ class StorageService {
         let firstKey = "first"
         let secondKey = "second"
         guard let first = UserDefaults.standard.string(forKey: firstKey),
-            let second = UserDefaults.standard.string(forKey: secondKey) else { return ["English", "Russian"] }
+            let second = UserDefaults.standard.string(forKey: secondKey) else { return ["", ""] }
         return [first, second]
     }
 }

@@ -68,9 +68,14 @@ extension HistoryViewController: UITableViewDataSource {
 
 extension HistoryViewController: UITableViewDelegate {
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let tbc = segue.destination as! UITabBarController
+//        tbc.selectedIndex = 0
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let text = historyArray[indexPath.row].originalString ?? ""
-        presenter?.userTappedCell(with: text)
+        let data = historyArray[indexPath.row]
+        presenter?.userTappedCell(with: data)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

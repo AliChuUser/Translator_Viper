@@ -19,7 +19,13 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
+        print(#function)
         interactor?.fetchButtonState()
+    }
+    
+    func configureViewWithHistory(data: Translate) {
+        print(#function)
+        view.showTranslateFromHistory(data: data)
     }
     
     func chooseNewLanguage() {

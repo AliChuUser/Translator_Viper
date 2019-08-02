@@ -12,10 +12,12 @@ import UIKit
 protocol MainViewProtocol: class {
     func showTranslate(text: String)
     func showButtonState(firstLanguage: String, secondLanguage: String)
+    func showTranslateFromHistory(data: Translate)
 }
 
 protocol MainPresenterProtocol: class {
     func configureView()
+    func configureViewWithHistory(data: Translate)
     func chooseNewLanguage()
     func changeLanguage(firstLanguage: String, secondLanguage: String)
     func provideButtonState(firstLanguage: String, secondLanguage: String)
@@ -31,6 +33,7 @@ protocol MainInteractorProtocol: class {
 
 protocol MainRouterProtocol: class {
     func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    func gotDataFromHistory(data: Translate)
 }
 
 protocol MainConfiguratorProtocol: class {

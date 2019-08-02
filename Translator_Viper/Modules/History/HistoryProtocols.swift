@@ -17,7 +17,7 @@ protocol HistoryPresenterProtocol: class {
     func getHistory()
     func historyReceived(data: [Translate])
     func searchBarTextDidChange(with text: String)
-    func userTappedCell(with text: String)
+    func userTappedCell(with data: Translate)
     func deleteAllData()
 }
 
@@ -28,7 +28,7 @@ protocol HistoryInteractorProtocol: class {
 }
 
 protocol HistoryRouterProtocol: class {
-    func showMainScreen(with text: String)
+    func showMainScreen(with data: Translate)
 }
 
 protocol HistoryConfiguratorProtocol: class {

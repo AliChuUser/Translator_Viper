@@ -33,6 +33,12 @@ class MainViewController: UIViewController, MainViewProtocol {
         }
     }
     
+    func showTranslateFromHistory(data: Translate) {
+        guard let originalString = data.originalString, let translatedString = data.translatedString else { return }
+        inputTextView.text = originalString
+        outputLabel.text = translatedString
+    }
+    
     func showButtonState(firstLanguage: String, secondLanguage: String) {
         firstLanguageButton.titleLabel?.text = firstLanguage
         secondLanguageButton.titleLabel?.text = secondLanguage
@@ -47,8 +53,8 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     @IBAction func changeLanguageButtonPressed(_ sender: Any) {
-        let changedSecondLang = firstLanguageButton.titleLabel?.text ?? "English"
-        let changedFirstLang = secondLanguageButton.titleLabel?.text ?? "Russian"
+        guard let changedSecondLang = firstLanguageButton.titleLabel?.text,
+            let changedFirstLang = secondLanguageButton.titleLabel?.text else { return }
         firstLanguageButton.titleLabel?.text = changedFirstLang
         secondLanguageButton.titleLabel?.text = changedSecondLang
         presenter?.changeLanguage(firstLanguage: changedFirstLang, secondLanguage: changedSecondLang)
@@ -76,9 +82,9 @@ extension MainViewController: UITextViewDelegate {
             inputTextView.textColor = UIColor.lightGray
             outputLabel.text = ""
         } else {
-            presenter?.makeTranslate(inputText: inputTextView.text,
-                                     startLanguage: firstLanguageButton.titleLabel?.text ?? "English",
-                                     finalLanguage: secondLanguageButton.titleLabel?.text ?? "Russian")
+            guard let startLanguage = firstLanguageButton.titleLabel?.text,
+                let finalLanguage = secondLanguageButton.titleLabel?.text else { return }
+            presenter?.makeTranslate(inputText: inputTextView.text, startLanguage: startLanguage, finalLanguage: finalLanguage)
         }
     }
 }
