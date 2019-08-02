@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HistoryRouter: HistoryRouterProtocol {
     
@@ -14,6 +15,10 @@ class HistoryRouter: HistoryRouterProtocol {
     
     init(viewController: HistoryViewController) {
         self.viewController = viewController
+    }
+    
+    func showMainScreen(with text: String) {
+        print(#function)
     }
     
 }

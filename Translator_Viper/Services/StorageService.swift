@@ -15,14 +15,20 @@ private let context = (UIApplication.shared.delegate as! AppDelegate).persistent
 class StorageService {
     
     // fetch data from CoreData
-    static func fetchData(with predicate: NSPredicate? = nil,
+    static func fetchData(withPredicate predicateText: String? = nil,
                           resultCallback result: @escaping ([Translate]) -> Void,
                           failureCallback failure: @escaping (Error) -> Void) {
-        
+        // init request
         let request: NSFetchRequest<Translate> = Translate.fetchRequest()
-        if let predicate = predicate {
+        
+        // convert searchBar predicate
+        if let text = predicateText {
+            let originalLangPredicate = NSPredicate(format: "originalString CONTAINS[c] %@ ", text)
+            let translatedLandPredicate = NSPredicate(format: "translatedString CONTAINS[c] %@", text)
+            let predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [originalLangPredicate, translatedLandPredicate])
             request.predicate = predicate
         }
+        // fetch request
         do {
             let objects = try context.fetch(request)
             result(objects)
@@ -69,5 +75,20 @@ class StorageService {
         } catch let error {
             print("Cannot save data to CoreData: \(error.localizedDescription)")
         }
+    }
+    
+    static func saveUserDefaults(firstButton: String, secondButton: String) {
+        let firstKey = "first"
+        let secondKey = "second"
+        UserDefaults.standard.set(firstButton, forKey: firstKey)
+        UserDefaults.standard.set(secondButton, forKey: secondKey)
+    }
+    
+    static func fetchUserDefaults() -> [String] {
+        let firstKey = "first"
+        let secondKey = "second"
+        guard let first = UserDefaults.standard.string(forKey: firstKey),
+            let second = UserDefaults.standard.string(forKey: secondKey) else { return ["English", "Russian"] }
+        return [first, second]
     }
 }

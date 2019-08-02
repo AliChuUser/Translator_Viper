@@ -16,14 +16,19 @@ protocol HistoryPresenterProtocol: class {
     func configureView()
     func getHistory()
     func historyReceived(data: [Translate])
+    func searchBarTextDidChange(with text: String)
+    func userTappedCell(with text: String)
+    func deleteAllData()
 }
 
 protocol HistoryInteractorProtocol: class {
     func fetchHistory()
+    func updateHistoryWithPredicate(_ text: String)
+    func deleteData()
 }
 
 protocol HistoryRouterProtocol: class {
-    
+    func showMainScreen(with text: String)
 }
 
 protocol HistoryConfiguratorProtocol: class {

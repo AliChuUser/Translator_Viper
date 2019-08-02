@@ -31,7 +31,11 @@ class MainViewController: UIViewController, MainViewProtocol {
         DispatchQueue.main.async {
             self.outputLabel.text = text
         }
-        
+    }
+    
+    func showButtonState(firstLanguage: String, secondLanguage: String) {
+        firstLanguageButton.titleLabel?.text = firstLanguage
+        secondLanguageButton.titleLabel?.text = secondLanguage
     }
     
     @IBAction func firstLanguageButtonPressed(_ sender: Any) {
@@ -43,7 +47,11 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     @IBAction func changeLanguageButtonPressed(_ sender: Any) {
-        presenter?.changeLanguage()
+        let changedSecondLang = firstLanguageButton.titleLabel?.text ?? "English"
+        let changedFirstLang = secondLanguageButton.titleLabel?.text ?? "Russian"
+        firstLanguageButton.titleLabel?.text = changedFirstLang
+        secondLanguageButton.titleLabel?.text = changedSecondLang
+        presenter?.changeLanguage(firstLanguage: changedFirstLang, secondLanguage: changedSecondLang)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -63,12 +71,14 @@ extension MainViewController: UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        
         if inputTextView.text.isEmpty {
             inputTextView.text = "Text or website address"
             inputTextView.textColor = UIColor.lightGray
+            outputLabel.text = ""
         } else {
-            presenter?.makeTranslate(inputText: inputTextView.text, startLanguage: "en", finalLanguage: "ru")
+            presenter?.makeTranslate(inputText: inputTextView.text,
+                                     startLanguage: firstLanguageButton.titleLabel?.text ?? "English",
+                                     finalLanguage: secondLanguageButton.titleLabel?.text ?? "Russian")
         }
     }
 }

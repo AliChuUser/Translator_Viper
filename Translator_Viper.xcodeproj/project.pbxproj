@@ -15,10 +15,10 @@
 		124C011D22F23AFC0005B212 /* SourceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C011C22F23AFC0005B212 /* SourceRouter.swift */; };
 		124C011F22F23B190005B212 /* SourceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C011E22F23B190005B212 /* SourceConfigurator.swift */; };
 		124C012222F24FCE0005B212 /* HistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124C012122F24FCE0005B212 /* HistoryViewCell.swift */; };
+		126F011722F3C8030044FB70 /* Translator_Viper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 126F011522F3C8030044FB70 /* Translator_Viper.xcdatamodeld */; };
 		CE5CAFDE22F1954D000D04EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CAFDD22F1954D000D04EC /* AppDelegate.swift */; };
 		CE5CAFE022F1954D000D04EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CAFDF22F1954D000D04EC /* MainViewController.swift */; };
 		CE5CAFE322F1954D000D04EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5CAFE122F1954D000D04EC /* Main.storyboard */; };
-		CE5CAFE622F1954D000D04EC /* Translator_Viper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE5CAFE422F1954D000D04EC /* Translator_Viper.xcdatamodeld */; };
 		CE5CAFE822F1954F000D04EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5CAFE722F1954F000D04EC /* Assets.xcassets */; };
 		CE5CAFEB22F1954F000D04EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5CAFE922F1954F000D04EC /* LaunchScreen.storyboard */; };
 		CE5CAFF822F1973E000D04EC /* MainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CAFF722F1973E000D04EC /* MainProtocols.swift */; };
@@ -44,11 +44,11 @@
 		124C011C22F23AFC0005B212 /* SourceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceRouter.swift; sourceTree = "<group>"; };
 		124C011E22F23B190005B212 /* SourceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceConfigurator.swift; sourceTree = "<group>"; };
 		124C012122F24FCE0005B212 /* HistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewCell.swift; sourceTree = "<group>"; };
+		126F011622F3C8030044FB70 /* Translator_Viper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Translator_Viper.xcdatamodel; sourceTree = "<group>"; };
 		CE5CAFDA22F1954D000D04EC /* Translator_Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator_Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5CAFDD22F1954D000D04EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE5CAFDF22F1954D000D04EC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE5CAFE222F1954D000D04EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CE5CAFE522F1954D000D04EC /* Translator_Viper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Translator_Viper.xcdatamodel; sourceTree = "<group>"; };
 		CE5CAFE722F1954F000D04EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE5CAFEA22F1954F000D04EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE5CAFEC22F1954F000D04EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				CE5CAFE722F1954F000D04EC /* Assets.xcassets */,
 				CE5CAFE922F1954F000D04EC /* LaunchScreen.storyboard */,
 				CE5CAFEC22F1954F000D04EC /* Info.plist */,
-				CE5CAFE422F1954D000D04EC /* Translator_Viper.xcdatamodeld */,
+				126F011522F3C8030044FB70 /* Translator_Viper.xcdatamodeld */,
 			);
 			path = Translator_Viper;
 			sourceTree = "<group>";
@@ -254,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				126F011722F3C8030044FB70 /* Translator_Viper.xcdatamodeld in Sources */,
 				CE5CAFF822F1973E000D04EC /* MainProtocols.swift in Sources */,
 				124C011922F23ABB0005B212 /* SourcePresenter.swift in Sources */,
 				124C012222F24FCE0005B212 /* HistoryViewCell.swift in Sources */,
@@ -263,7 +264,6 @@
 				124C011722F239E40005B212 /* SourceProtocols.swift in Sources */,
 				CE5CAFFC22F19807000D04EC /* MainPresenter.swift in Sources */,
 				124C011222F237130005B212 /* StorageService.swift in Sources */,
-				CE5CAFE622F1954D000D04EC /* Translator_Viper.xcdatamodeld in Sources */,
 				CE5CB00822F19C2D000D04EC /* HistoryInteractor.swift in Sources */,
 				CE5CB00222F19AEC000D04EC /* HistoryViewController.swift in Sources */,
 				CE5CAFE022F1954D000D04EC /* MainViewController.swift in Sources */,
@@ -478,12 +478,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CE5CAFE422F1954D000D04EC /* Translator_Viper.xcdatamodeld */ = {
+		126F011522F3C8030044FB70 /* Translator_Viper.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CE5CAFE522F1954D000D04EC /* Translator_Viper.xcdatamodel */,
+				126F011622F3C8030044FB70 /* Translator_Viper.xcdatamodel */,
 			);
-			currentVersion = CE5CAFE522F1954D000D04EC /* Translator_Viper.xcdatamodel */;
+			currentVersion = 126F011622F3C8030044FB70 /* Translator_Viper.xcdatamodel */;
 			path = Translator_Viper.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -11,6 +11,7 @@ import UIKit
 class HistoryViewController: UIViewController, HistoryViewProtocol {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var historyArray = [Translate]()
     
@@ -21,6 +22,7 @@ class HistoryViewController: UIViewController, HistoryViewProtocol {
         super.viewDidLoad()
         configurator.configure(with: self)
         presenter?.configureView()
+        searchBar.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,9 +32,19 @@ class HistoryViewController: UIViewController, HistoryViewProtocol {
     }
     
     func showHistory(with data: [Translate]) {
+        historyArray = []
         historyArray.append(contentsOf: data)
         tableView.reloadData()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        searchBar.resignFirstResponder()
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        presenter?.deleteAllData()
+    }
+    
     
 }
 
@@ -50,10 +62,30 @@ extension HistoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65
+        return 62
     }
 }
 
 extension HistoryViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let text = historyArray[indexPath.row].originalString ?? ""
+        presenter?.userTappedCell(with: text)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension HistoryViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let text = searchBar.text {
+            if !text.isEmpty {
+                presenter?.searchBarTextDidChange(with: text)
+            } else {
+                historyArray = []
+                presenter?.getHistory()
+            }
+        }
+    }
     
 }

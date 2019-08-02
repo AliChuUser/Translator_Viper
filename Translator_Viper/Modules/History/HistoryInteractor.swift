@@ -24,4 +24,16 @@ class HistoryInteractor: HistoryInteractorProtocol {
         }
     }
     
+    func updateHistoryWithPredicate(_ text: String) {
+        StorageService.fetchData(withPredicate: text, resultCallback: { (data) in
+            self.presenter?.historyReceived(data: data)
+        }) { (error) in
+            print("Cannot fetch data with predicate from CareData: \(error.localizedDescription)")
+        }
+    }
+    
+    func deleteData() {
+        StorageService.deleteAllData()
+        presenter?.getHistory()
+    }
 }

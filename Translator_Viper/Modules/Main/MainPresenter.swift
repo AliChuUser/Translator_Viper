@@ -19,25 +19,39 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
-        print(#function)
+        interactor?.fetchButtonState()
     }
     
     func chooseNewLanguage() {
         print(#function)
     }
     
-    func changeLanguage() {
-        print(#function)
+    func changeLanguage(firstLanguage: String, secondLanguage: String) {
+        interactor?.saveButtonState(firstButton: firstLanguage, secondButton: secondLanguage)
+    }
+    
+    func provideButtonState(firstLanguage: String, secondLanguage: String) {
+        view.showButtonState(firstLanguage: firstLanguage, secondLanguage: secondLanguage)
     }
     
     func makeTranslate(inputText: String, startLanguage: String, finalLanguage: String) {
-        print(#function)
-        interactor?.fetchTranslate(inputText: inputText, startLanguage: startLanguage, finalLanguage: finalLanguage)
+        let convertedStartLanguage = convertLanguageCode(input: startLanguage)
+        let convertedFinalLanguage = convertLanguageCode(input: finalLanguage)
+        
+        interactor?.fetchTranslate(inputText: inputText, startLanguage: convertedStartLanguage, finalLanguage: convertedFinalLanguage)
     }
     
     func translateReceived(text: String) {
-        print(#function)
         view.showTranslate(text: text)
+    }
+    
+    private func convertLanguageCode(input: String) -> String {
+        switch input {
+        case "English": return "en"
+        case "Russian": return "ru"
+        case "Spanish": return "es"
+        default: return "en"
+        }
     }
     
 }

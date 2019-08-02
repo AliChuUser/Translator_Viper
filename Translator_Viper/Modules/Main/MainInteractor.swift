@@ -18,6 +18,15 @@ class MainInteractor: MainInteractorProtocol {
         self.presenter = presenter
     }
     
+    func saveButtonState(firstButton: String, secondButton: String) {
+        StorageService.saveUserDefaults(firstButton: firstButton, secondButton: secondButton)
+    }
+    
+    func fetchButtonState() {
+        let buttonStateArray = StorageService.fetchUserDefaults()
+        presenter?.provideButtonState(firstLanguage: buttonStateArray[0], secondLanguage: buttonStateArray[1])
+    }
+    
     func fetchTranslate(inputText: String, startLanguage: String, finalLanguage: String) {
         
         // fetch data from CoreData if possible

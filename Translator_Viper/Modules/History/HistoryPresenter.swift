@@ -29,4 +29,16 @@ class HistoryPresenter: HistoryPresenterProtocol {
     func historyReceived(data: [Translate]) {
         view.showHistory(with: data)
     }
+    
+    func searchBarTextDidChange(with text: String) {
+        interactor?.updateHistoryWithPredicate(text)
+    }
+    
+    func userTappedCell(with text: String) {
+        router?.showMainScreen(with: text)
+    }
+    
+    func deleteAllData() {
+        interactor?.deleteData()
+    }
 }
