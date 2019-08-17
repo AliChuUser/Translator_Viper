@@ -14,7 +14,8 @@ protocol SourceViewProtocol: class {
 
 protocol SourcePresenterProtocol: class {
     func configureView()
-    func close(viewController: SourceViewController)
+    func closeCurrentViewController()
+    func languageBattonPressed(with title: String)
 }
 
 protocol SourceInteractorProtocol: class {
@@ -22,7 +23,7 @@ protocol SourceInteractorProtocol: class {
 }
 
 protocol SourceRouterProtocol: class {
-    func close(viewController: SourceViewController)
+    func closeViewController()
 }
 
 protocol SourceConfiguratorProtocol: class {

@@ -27,6 +27,17 @@ class MainViewController: UIViewController, MainViewProtocol {
         inputTextView.textColor = UIColor.lightGray
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(#function)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(#function)
+    }
+    
     func showTranslate(text: String) {
         DispatchQueue.main.async {
             self.outputLabel.text = text
@@ -34,14 +45,20 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     func showTranslateFromHistory(data: Translate) {
+        print(#function)
         guard let originalString = data.originalString, let translatedString = data.translatedString else { return }
-        inputTextView.text = originalString
-        outputLabel.text = translatedString
+        
+        DispatchQueue.main.async {
+            self.inputTextView.textColor = .black
+            self.inputTextView.text = originalString
+            self.outputLabel.text = translatedString
+        }
+        
     }
     
     func showButtonState(firstLanguage: String, secondLanguage: String) {
-        firstLanguageButton.titleLabel?.text = firstLanguage
-        secondLanguageButton.titleLabel?.text = secondLanguage
+        firstLanguageButton.setTitle(firstLanguage, for: .normal)
+        secondLanguageButton.setTitle(secondLanguage, for: .normal)
     }
     
     @IBAction func firstLanguageButtonPressed(_ sender: Any) {
@@ -55,8 +72,8 @@ class MainViewController: UIViewController, MainViewProtocol {
     @IBAction func changeLanguageButtonPressed(_ sender: Any) {
         guard let changedSecondLang = firstLanguageButton.titleLabel?.text,
             let changedFirstLang = secondLanguageButton.titleLabel?.text else { return }
-        firstLanguageButton.titleLabel?.text = changedFirstLang
-        secondLanguageButton.titleLabel?.text = changedSecondLang
+        firstLanguageButton.setTitle(changedFirstLang, for: .normal)
+        secondLanguageButton.setTitle(changedSecondLang, for: .normal)
         presenter?.changeLanguage(firstLanguage: changedFirstLang, secondLanguage: changedSecondLang)
     }
     

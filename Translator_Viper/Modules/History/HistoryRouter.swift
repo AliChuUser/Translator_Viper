@@ -12,8 +12,6 @@ import UIKit
 class HistoryRouter: HistoryRouterProtocol {
     
     weak var viewController: HistoryViewController!
-    var mainRouter: MainRouterProtocol? //
-    //var mainViewController: MainViewController!
     
     init(viewController: HistoryViewController) {
         self.viewController = viewController
@@ -21,7 +19,15 @@ class HistoryRouter: HistoryRouterProtocol {
     
     func showMainScreen(with data: Translate) {
         print(#function)
-        mainRouter?.gotDataFromHistory(data: data)
-        viewController.tabBarController?.selectedIndex = 0
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let dvc = storyboard.instantiateViewController(withIdentifier: "MainVC") as! MainViewController
+        
+        dvc.configurator.configure(with: dvc)
+        
+        //viewController.tabBarController?.selectedIndex = 0
+        viewController.present(dvc, animated: true, completion: nil)
+        dvc.presenter?.configureViewWithHistory(data: data)
+        
     }
 }

@@ -190,6 +190,9 @@
                                 <state key="normal" title="English">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="englishButtonPressed:" destination="3lj-2R-pMP" eventType="touchUpInside" id="gHh-iz-aZA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAq-Ls-Vx1">
                                 <rect key="frame" x="12" y="133" width="390" height="45"/>
@@ -199,6 +202,9 @@
                                 <state key="normal" title="Russian">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="russianButtonPressed:" destination="3lj-2R-pMP" eventType="touchUpInside" id="QlQ-tc-onb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6b-Ke-Gjf">
                                 <rect key="frame" x="12" y="178" width="390" height="45"/>
@@ -208,6 +214,9 @@
                                 <state key="normal" title="Spanish">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="spanishButtonPressed:" destination="3lj-2R-pMP" eventType="touchUpInside" id="IZ1-bN-y7g"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -233,6 +242,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="englishButton" destination="rym-3S-kgn" id="ah5-uW-LPo"/>
+                        <outlet property="russianButton" destination="dAq-Ls-Vx1" id="DEV-0a-B6i"/>
+                        <outlet property="spanishButton" destination="y6b-Ke-Gjf" id="xFj-wa-1l9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqz-nj-10f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

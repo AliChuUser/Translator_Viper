@@ -22,8 +22,12 @@ class SourcePresenter: SourcePresenterProtocol {
         print(#function)
     }
     
-    func close(viewController: SourceViewController) {
-        router?.close(viewController: viewController)
+    func closeCurrentViewController() {
+        router?.closeViewController()
+    }
+    
+    func languageBattonPressed(with title: String) {
+        
     }
     
 }

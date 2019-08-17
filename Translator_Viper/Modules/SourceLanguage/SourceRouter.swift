@@ -16,7 +16,7 @@ class SourceRouter: SourceRouterProtocol {
         self.viewController = viewController
     }
     
-    func close(viewController: SourceViewController) {
+    func closeViewController() {
         viewController.dismiss(animated: true, completion: nil)
     }
     
